@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2xNgt"
-run/main_scene="uid://dknrfvauhcb3k"
+run/main_scene="uid://chitrejydishl"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
