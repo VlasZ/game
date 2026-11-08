@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dyf8sa3c7b121"]
+
+[ext_resource type="PackedScene" uid="uid://coml8d1y7yw07" path="res://Scenes/cave_exit.tscn" id="1_aksbv"]
+
+[node name="Cave" type="Node2D" unique_id=673309854]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=884789435]
+color = Color(0.3525, 0.46020833, 0.47, 1)
+polygon = PackedVector2Array(1000, 0, 1000, 800, 0, 800, 0, 0)
+
+[node name="CaveExit" parent="." unique_id=1843111 instance=ExtResource("1_aksbv")]
+position = Vector2(165, 128)

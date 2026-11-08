@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://57tipanqoo6k"]
+
+[ext_resource type="Script" uid="uid://brja66h118irn" path="res://Scripts/world.gd" id="1_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://ci675xiteownm" path="res://Scenes/player.tscn" id="1_go701"]
+[ext_resource type="PackedScene" uid="uid://dknrfvauhcb3k" path="res://Scenes/start_place.tscn" id="2_5a7ea"]
+
+[node name="World" type="Node2D" unique_id=1497395195]
+script = ExtResource("1_5a7ea")
+
+[node name="Room" type="Node2D" parent="." unique_id=374370947]
+
+[node name="StartPlace" parent="Room" unique_id=145511249 instance=ExtResource("2_5a7ea")]
+
+[node name="Player" parent="." unique_id=525763844 instance=ExtResource("1_go701")]
+position = Vector2(325, 360)

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="2xNgt"
-run/main_scene="uid://chitrejydishl"
+run/main_scene="uid://57tipanqoo6k"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://c2majabhu32d1"
+
+[autoload]
+
+GameManager="*uid://bcjbfnbyt44p2"
 
 [display]
 

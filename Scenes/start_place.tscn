@@ -1,10 +1,6 @@
 [gd_scene format=3 uid="uid://dknrfvauhcb3k"]
 
-[ext_resource type="PackedScene" uid="uid://ci675xiteownm" path="res://Scenes/player.tscn" id="1_dsjdt"]
-[ext_resource type="Script" uid="uid://br71x610v7y5a" path="res://Scripts/key.gd" id="2_jpvnx"]
-[ext_resource type="Texture2D" uid="uid://b1narwmvxkhwk" path="res://Assets/key.png" id="3_c31ra"]
-[ext_resource type="Script" uid="uid://d3q0mlygxcjlx" path="res://Scripts/door.gd" id="4_3ykyt"]
-[ext_resource type="Texture2D" uid="uid://djqysia2kekt3" path="res://Assets/door.png" id="4_c31ra"]
+[ext_resource type="PackedScene" uid="uid://db52d65xww5vd" path="res://Scenes/cave_entrance.tscn" id="1_fxyo6"]
 [ext_resource type="Script" uid="uid://umrc1wukrvnk" path="res://Scripts/ui.gd" id="6_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wdb6"]
@@ -12,13 +8,6 @@ size = Vector2(800, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsjdt"]
 size = Vector2(32, 600)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7wdb6"]
-radius = 9.0
-height = 34.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8couc"]
-size = Vector2(64, 128)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3ykyt"]
 font_size = 42
@@ -28,10 +17,10 @@ font_size = 32
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Main" type="Node2D" unique_id=145511249]
+[node name="StartPlace" type="Node2D" unique_id=145511249]
 
 [node name="Floor" type="Polygon2D" parent="." unique_id=752195321]
-color = Color(0.2515422, 0.2544991, 0.29242554, 1)
+color = Color(0.45490196, 0.7372549, 0.5058824, 1)
 polygon = PackedVector2Array(0, 0, 800, 0, 800, 600, 0, 600)
 
 [node name="WallTop" type="StaticBody2D" parent="." unique_id=1299091995]
@@ -58,30 +47,12 @@ position = Vector2(16, 300)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=1978505148]
 shape = SubResource("RectangleShape2D_dsjdt")
 
-[node name="Key" type="Area2D" parent="." unique_id=2141388501]
-position = Vector2(150, 150)
-rotation = -2.3561945
-script = ExtResource("2_jpvnx")
+[node name="CaveEntrance" parent="." unique_id=203418916 instance=ExtResource("1_fxyo6")]
+position = Vector2(499, 376)
 
-[node name="Sprite2D" type="Sprite2D" parent="Key" unique_id=604490427]
-rotation = 1.5707964
-texture = ExtResource("3_c31ra")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1806239925]
-shape = SubResource("CapsuleShape2D_7wdb6")
-
-[node name="Player" parent="." unique_id=525763844 instance=ExtResource("1_dsjdt")]
-position = Vector2(406, 310)
-
-[node name="Door" type="Area2D" parent="." unique_id=4296405]
-position = Vector2(300, 300)
-script = ExtResource("4_3ykyt")
-
-[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1679963542]
-texture = ExtResource("4_c31ra")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=238397880]
-shape = SubResource("RectangleShape2D_8couc")
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=163914359]
+position = Vector2(486, 503)
+gizmo_extents = 36.3
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=858833591]
 offset = Vector2(810, 490)

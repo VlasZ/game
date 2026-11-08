@@ -1,10 +1,12 @@
-
 extends CharacterBody2D
 
 @export var speed: float = 300.0
 var has_key: bool = false
 var game_over: bool = false
 
+func _ready() -> void:
+	GameManager.player = self
+	
 func _physics_process(_delta: float) -> void:
 	if game_over:
 		velocity = Vector2.ZERO

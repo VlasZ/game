@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://coml8d1y7yw07"]
+
+[ext_resource type="Script" uid="uid://ya287gbfwvnh" path="res://Scripts/cave_exit.gd" id="1_wl55l"]
+
+[node name="CaveExit" type="Node2D" unique_id=1843111]
+script = ExtResource("1_wl55l")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=701538667]
+color = Color(0.87346166, 0.9899928, 0.4461809, 1)
+polygon = PackedVector2Array(0, 70, 25, 0, 75, 0, 100, 70, 100, 200, 0, 200)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=379963606]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1214307223]
+polygon = PackedVector2Array(0, 70, 25, 0, 75, 0, 100, 70, 100, 200, 0, 200)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
