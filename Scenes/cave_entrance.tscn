@@ -1,24 +1,23 @@
 [gd_scene format=3 uid="uid://db52d65xww5vd"]
 
-[ext_resource type="Script" uid="uid://c0q63u8wfba68" path="res://Scripts/cave_entrance.gd" id="1_i3co4"]
+[ext_resource type="Script" uid="uid://ya287gbfwvnh" path="res://Scripts/room_to_spawn.gd" id="1_i3co4"]
 [ext_resource type="Texture2D" uid="uid://ci2qt6s3t5hql" path="res://Assets/cave_entrance.png" id="2_q3hn0"]
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7wdb6"]
-points = PackedVector2Array(28, 65, -43, 65, -14, 3, 29, 7)
 
 [node name="CaveEntrance" type="Area2D" unique_id=203418916]
 script = ExtResource("1_i3co4")
+room_path = "uid://dyf8sa3c7b121"
+spawn_name = "SpawnPoint2"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=971424752]
 texture = ExtResource("2_q3hn0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=742210919]
+[node name="CollisionEntrance" type="CollisionPolygon2D" parent="." unique_id=1410188350]
 position = Vector2(-1, -1)
-shape = SubResource("ConvexPolygonShape2D_7wdb6")
+polygon = PackedVector2Array(28, 65, -43, 65, -14, 3, 29, 7)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1572174764]
+[node name="CaveWalls" type="StaticBody2D" parent="." unique_id=1572174764]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2058808169]
+[node name="CollisionWalls" type="CollisionPolygon2D" parent="CaveWalls" unique_id=2058808169]
 polygon = PackedVector2Array(-15, 2, -52, 19, -47, -9, -37, -35, -30, -40, -24, -40, -19, -48, -14, -59, 1, -63, 15, -63, 25, -58, 35, -48, 43, -35, 45, -23, 47, -5, 51, 10, 56, 26, 60, 38, 28, 6)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dknrfvauhcb3k"]
 
 [ext_resource type="PackedScene" uid="uid://db52d65xww5vd" path="res://Scenes/cave_entrance.tscn" id="1_fxyo6"]
+[ext_resource type="Script" uid="uid://d3hjb1g5rh03j" path="res://Scripts/spawn_points.gd" id="2_c5tom"]
 [ext_resource type="Script" uid="uid://umrc1wukrvnk" path="res://Scripts/ui.gd" id="6_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wdb6"]
@@ -48,11 +49,12 @@ position = Vector2(16, 300)
 shape = SubResource("RectangleShape2D_dsjdt")
 
 [node name="CaveEntrance" parent="." unique_id=203418916 instance=ExtResource("1_fxyo6")]
-position = Vector2(499, 376)
+position = Vector2(492, 365)
 
-[node name="SpawnPoint" type="Marker2D" parent="." unique_id=163914359]
-position = Vector2(486, 503)
+[node name="SpawnPoint1" type="Marker2D" parent="." unique_id=163914359]
+position = Vector2(490, 488)
 gizmo_extents = 36.3
+script = ExtResource("2_c5tom")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=858833591]
 offset = Vector2(810, 490)
