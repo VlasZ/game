@@ -5,4 +5,4 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		var world = get_tree().current_scene.call_deferred("change_room", room_path, spawn_name)
+		var _world = get_tree().current_scene.call_deferred("change_room", room_path, spawn_name)
