@@ -35,12 +35,13 @@ texture = SubResource("CanvasTexture_hqhmj")
 
 [node name="Prompt" type="Label" parent="." unique_id=1257655531]
 offset_left = -62.0
-offset_top = -62.0
+offset_top = -97.0
 offset_right = 62.0
 offset_bottom = -26.0
 text = "E - open"
 label_settings = SubResource("LabelSettings_lyb87")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

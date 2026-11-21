@@ -12,8 +12,13 @@ func _process(delta: float) -> void:
 		interact()
 
 func _on_interaction_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player") and not is_opened:
+	if body.is_in_group("player"):
 		player_in_range = true
+
+		if is_opened:
+			prompt.text = "Пусто..."
+		else:
+			prompt.text = "E — открыть"
 		prompt.show()
 
 func _on_interaction_area_body_exited(body: Node2D) -> void:
@@ -24,10 +29,8 @@ func _on_interaction_area_body_exited(body: Node2D) -> void:
 func interact() -> void:
 	if is_opened:
 		return
-
 	is_opened = true
-	prompt.text = "Пусто..."
+	prompt.text = "В сундуке ничего \n не оказалось!"
 	prompt.show()
-
 	print("Сундук открыт")
 	
