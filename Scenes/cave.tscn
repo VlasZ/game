@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://coml8d1y7yw07" path="res://Scenes/cave_exit.tscn" id="1_aksbv"]
 [ext_resource type="Script" uid="uid://d3hjb1g5rh03j" path="res://Scripts/spawn_points.gd" id="2_02alt"]
+[ext_resource type="PackedScene" uid="uid://d4gm2x80ia3e5" path="res://Scenes/chest.tscn" id="3_3usej"]
 
 [node name="Cave" type="Node2D" unique_id=673309854]
 
@@ -13,5 +14,8 @@ polygon = PackedVector2Array(1000, 0, 1000, 800, 0, 800, 0, 0)
 position = Vector2(685, 321)
 
 [node name="SpawnPoint2" type="Marker2D" parent="." unique_id=970232882]
-position = Vector2(733, 585)
+position = Vector2(733, 278)
 script = ExtResource("2_02alt")
+
+[node name="Chest" parent="." unique_id=1134157729 instance=ExtResource("3_3usej")]
+position = Vector2(309, 229)

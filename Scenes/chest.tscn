@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://d4gm2x80ia3e5"]
+
+[ext_resource type="Script" uid="uid://cysh0k1i5f6ln" path="res://Scripts/chest.gd" id="1_lyb87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqhmj"]
+size = Vector2(54, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blk7n"]
+size = Vector2(128, 126)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hqhmj"]
+specular_color = Color(0.90085566, 0.51677185, 0.4063986, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lyb87"]
+outline_size = 5
+outline_color = Color(0.76280874, 0.76651233, 0, 1)
+
+[node name="Chest" type="Node2D" unique_id=1134157729]
+script = ExtResource("1_lyb87")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1675736442]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1147370761]
+shape = SubResource("RectangleShape2D_hqhmj")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=758020446]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1288934028]
+shape = SubResource("RectangleShape2D_blk7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=402802733]
+position = Vector2(0, -4.7683716e-07)
+scale = Vector2(54.000004, 52)
+texture = SubResource("CanvasTexture_hqhmj")
+
+[node name="Prompt" type="Label" parent="." unique_id=1257655531]
+offset_left = -62.0
+offset_top = -62.0
+offset_right = 62.0
+offset_bottom = -26.0
+text = "E - open"
+label_settings = SubResource("LabelSettings_lyb87")
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
